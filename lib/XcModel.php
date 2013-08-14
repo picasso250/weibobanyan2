@@ -6,7 +6,7 @@
  * @author ryan
  */
 class XcModel 
-//extends Model 
+extends Model 
 {
     
     protected $id = null;
@@ -15,11 +15,6 @@ class XcModel
     public static function orm()
     {
         return ORM::for_table(static::table());
-    }
-
-    public static function get($id)
-    {
-        return ORM::for_table(static::table())->find_one($id);
     }
 
     public static function table()
