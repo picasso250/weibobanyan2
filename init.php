@@ -1,16 +1,4 @@
 <?php
- 
-// load model classes and more
-require 'vendor/idiorm.php';
-spl_autoload_register(function ($name) {
-    if (file_exists(_lib($name))) {
-        require_once _lib($name);
-    } elseif (file_exists(_model($name))) {
-        require_once _model($name);
-    }
-});
-
-$root_path = __DIR__.'/'; // 没用啊。。。
 
 // 变量初始化
 $show_header = 1; // 这种东西是否应该扔到config中？或者集合到$show变量里

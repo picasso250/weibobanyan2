@@ -20,11 +20,27 @@ if (ON_SERVER) {
     require 'config/server.php'; // sever中的配置会覆盖common中的配置
 }
 
+// load model classes and more
+require 'vendor/idiorm.php';
+spl_autoload_register(function ($name) {
+    if (preg_match('/^XcFrameWork\b/', $name)) {
+        require AROOT.'vendor/'.str_replace('\\', '/', $name).'.php';
+        return;
+    }
+    if (file_exists(_lib($name))) {
+        require_once _lib($name);
+    } elseif (file_exists(_model($name))) {
+        require_once _model($name);
+    }
+});
+
 require AROOT.'init.php'; // 变量的初始化
 
-date_default_timezone_set('PRC');
-ob_start();
-session_start();
+use XcFrameWork\XcWebApp;
+
+$app = new XcWebApp();
+$app->config();
+$app->run();
 
 include _controller('init');
 
