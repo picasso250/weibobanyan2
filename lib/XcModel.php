@@ -1,10 +1,13 @@
 <?php
+
 /**
  * Description of Model
  *
  * @author ryan
  */
-class Model {
+class XcModel 
+//extends Model 
+{
     
     protected $id = null;
     protected $info = null;
@@ -50,5 +53,13 @@ class Model {
     
     protected function selfCond() {
         return array('id=?' => $this->id);
+    }
+
+    public static function add($args) {
+        $r = static::orm()->create();
+        $r->set($args);
+        $r->save();
+        $self_class = get_called_class();
+        return new $self_class($r->id);
     }
 }

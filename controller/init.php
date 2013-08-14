@@ -44,17 +44,11 @@ if ($user_id && isset($_SESSION['se_user_name'])) {
     }
     $platform = 'cookie';
 
-    $user = ORM::for_table('open_id')
-        ->where('platform', $platform)
-        ->where('open_id', $cookie_id)
-        ->select('user')
-        ->find_one();
+    $user = User::getOnPlatform($platform, $cookie_id);
     if ($user === false) { // if not exist
         $user = User::createFromOpenId($platform, $cookie_id);
-    } else {
-        $user = User::orm()->find_one($user->user);
     }
-    $user_id = $_SESSION['se_user_id'] = $user->get('id'); // 确保 $user_id有值
+    $user_id = $_SESSION['se_user_id'] = $user->getId(); // 确保 $user_id有值
 }
 
 $perm = Perm::getByUserKind(get_set($user_info['kind']));

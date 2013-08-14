@@ -9,12 +9,12 @@
  * @author  ryan <cumt.xiaochi@gmail.com>
  * @created Jul 17, 2012 10:13:11 AM
  */
-class Role extends Model {
+class Role extends XcModel {
 
     static $table = 'role';
 
     public function getInfo($whose_view=0) {
-        $r = self::orm()->find_one($this->id)->as_array();
+        $r = static::orm()->find_one($this->id)->as_array();
         if ($whose_view) {
             $user_id = $whose_view;
             $r['watch'] = $this->watchBy($user_id);
@@ -24,7 +24,7 @@ class Role extends Model {
 
     public static function hasName($name)
     {
-        $r = self::orm()->where('name', $name)->find_one();
+        $r = static::orm()->where('name', $name)->find_one();
 
         if ($r) {
             return new self($r->as_array());
@@ -39,13 +39,6 @@ class Role extends Model {
             'user=?'=>$user_id,
             'role=?'=>$this->id
         ));
-    }
-
-    public static function add($args) {
-        $r = self::orm()->create();
-        $r->set($args);
-        $r->save();
-        return new self($r->id);
     }
 
     public function edit ($arr) {

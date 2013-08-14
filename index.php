@@ -22,6 +22,7 @@ if (ON_SERVER) {
 
 // load model classes and more
 require 'vendor/idiorm.php';
+require 'vendor/paris.php';
 spl_autoload_register(function ($name) {
     if (preg_match('/^XcFrameWork\b/', $name)) {
         require AROOT.'vendor/'.str_replace('\\', '/', $name).'.php';

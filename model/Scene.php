@@ -8,7 +8,7 @@
  * @author  ryan <cumt.xiaochi@gmail.com>
  * @created Jul 26, 2012 10:39:27 AM
  */
-class Scene extends Model {
+class Scene extends XcModel {
 
     protected $id = 0;
     protected $table = 'scene';

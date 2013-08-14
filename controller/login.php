@@ -20,7 +20,7 @@ if ($qq_login->isCalled()) {
     $qq_login->getAccessToken($_GET['code']);
     $qq_openid = $qq_login->getOpenId();
 
-    $user = User::get($platform, $qq_openid);
+    $user = User::getOnPlatform($platform, $qq_openid);
     if ($user === false) { // if not exist
         $user = User::createFromOpenId($platform, $qq_openid);
     }

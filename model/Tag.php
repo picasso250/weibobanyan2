@@ -9,7 +9,7 @@
  * @author  ryan <cumt.xiaochi@gmail.com>
  * @created Jul 27, 2012 3:01:01 PM
  */
-class Tag extends Model {
+class Tag extends XcModel {
     public static function getIdByText($tag_text) {
         $table = 'role_tag';
         //....
