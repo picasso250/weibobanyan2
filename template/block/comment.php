@@ -1,5 +1,5 @@
 <?php
-!defined('IN_KC') && exit('Access Denied');
+ 
 ?>
 <div class="comment" style="">
     <ul class="comment" style="<?php echo count($comments) > 0 ? '' : 'display: none'; ?>">

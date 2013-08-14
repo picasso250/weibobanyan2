@@ -1,6 +1,6 @@
 <?php
 
-!defined('IN_KC') && exit('Access Denied');
+ 
 /**
  * @file    post
  * @author  ryan <cumt.xiaochi@gmail.com>

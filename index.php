@@ -11,7 +11,7 @@
 ini_set('display_errors', true); // 在 SAE 上 ini_set() 不起作用，但也不会报错
 error_reporting(E_ALL | E_STRICT);
 
-define('IN_KC', 1);
+// define('IN_KC', 1);
 define('AROOT', __DIR__.'/');
 
 require AROOT.'lib/lib.php';

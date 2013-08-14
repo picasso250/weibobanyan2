@@ -1,5 +1,4 @@
 <?php
-!defined('IN_KC') && exit('ILLEGAL EXECUTION');
 
 /**
  * Pdb

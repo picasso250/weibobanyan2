@@ -1,7 +1,6 @@
 <?php
 
-!defined('IN_KC') && exit('Access Denied');
-/**
+ /**
  * @file    config
  * @author  ryan <cumt.xiaochi@gmail.com>
  * @created Jun 27, 2012 6:20:27 PM

@@ -1,5 +1,5 @@
 <?php
-!defined('IN_KC') && exit('Access Denied');
+ 
 ?>
 <?php foreach ($comments as $c): ?>
 <li class="comment">

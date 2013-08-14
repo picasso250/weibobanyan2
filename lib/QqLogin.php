@@ -1,6 +1,6 @@
 <?php
 
-!defined('IN_KC') && exit('Access Denied');
+ 
 
 /**
  * QQ 互联登录

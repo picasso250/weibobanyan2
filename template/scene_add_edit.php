@@ -1,5 +1,5 @@
 <?php
-!defined('IN_KC') && exit('Access Denied');
+ 
 /**
  * @file    add_scene
  * @author  ryan <cumt.xiaochi@gmail.com>

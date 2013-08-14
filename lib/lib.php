@@ -1,5 +1,5 @@
 <?php
-!defined('IN_KC') && exit('Access Denied');
+ 
 /**
  * @file    lib
  * @author  ryan <cumt.xiaochi@gmail.com>

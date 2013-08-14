@@ -1,12 +1,8 @@
 <?php
-!defined('IN_KC') && exit('Access Denied');
-
+ 
 // load model classes and more
+require 'vendor/idiorm.php';
 spl_autoload_register(function ($name) {
-    $class_map = array(
-        'ORM' => 'idiorm',
-    );
-    $name = isset($class_map[$name]) ? $class_map[$name] : $name;
     if (file_exists(_lib($name))) {
         require_once _lib($name);
     } elseif (file_exists(_model($name))) {
