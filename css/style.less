@@ -1,0 +1,443 @@
+// writen by: Ryan
+
+span, div {
+    color: #141313;
+}
+body {
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti !important;
+}
+input {
+    padding-left: 2px;
+}
+
+// ===== header ========
+.header {
+    background-color: #545454;
+    border-bottom: 1px solid #403F3F;
+    box-shadow: 0 0 10px #000;
+    margin-bottom: 20px;
+    h1 {
+        font-size: 24pt;
+        margin: 8px 0 0 4px;
+        a {
+            display: inline-block;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        span {
+            color: #F2EEEE;
+        }
+        .beta {
+            color: #C8C0C0;
+            font-size: 22px;
+        }
+    }
+    .control {
+        margin: 12px 10px 0 0;
+        img { width: 16px; }
+        .name {
+            font-weight: bold;
+        }
+        span {
+            color: #F0F0F0;
+        }
+        a {
+            color: #F0F0F0;
+            font-weight: 550;
+            text-shadow: 0 -1px 1px #000000;
+            img {
+                vertical-align: sub;
+            }
+        }
+        a:hover {
+            text-shadow: 0 0 1px #fff;
+            text-decoration: none;
+        }
+    }
+}
+span.verify {
+    color: red;
+}
+
+@page-background-color: #F0F0F0;
+body {
+    background-color: @page-background-color;
+}
+.content {
+}
+
+@footer-color: #b8b8b8;
+.footer {
+    margin: 10px 0;
+    font-size: small;
+    opacity: 0.7;
+    background-color: @page-background-color;
+    clear: both;
+    .c {
+        border-top: 1px solid #d3d3d3;
+        padding: 10px;
+        padding-bottom: 20px;
+    }
+    ul {
+        list-style: none;
+        li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.clear-fix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+.clear-fix-after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+ul.comment {
+    clear: both;
+    margin-left: 0;
+    border: 1px solid #D3D0D0;
+    background-color: #fff;
+
+    li.comment {
+        padding: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow: hidden;
+        border-bottom: 1px solid #CECBCB;
+
+        span.time {
+            color: #B3B3B3;
+            font-size: small;
+        }
+    }
+}
+
+.box {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #E2E2E9;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+@twit-content-width: 690px; // should move to below
+.index-top {
+    .box;
+    margin: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.del-link {
+    font-size: 10pt;
+    color: #DD204C;
+}
+
+.box-bg {
+    margin: 10px;
+    background-color: #F7F7F8;
+    padding: 10px;
+    border: 1px solid #D8D5D5;
+}
+
+@import "twit.less";
+
+.role {
+    .search-add-role-form {
+        .box-bg;
+        ul.role-list {
+
+            li {
+                
+                a {
+                    display: block;
+                    padding: 10px;
+                }
+                a:hover {
+                    background-color: #ddd;
+                }
+            }
+            li.on a {
+                background-color: #ddd;
+            }
+        }
+    }
+    dl {
+        .box-bg;
+        dt {
+            font-size: 22px;
+        }
+        dd {
+            border-left: 3px solid #555;
+            background-color: #dde1e1;
+            margin: 5px;
+            padding: 5px;
+            .control { margin: 0.5em; }
+
+        }
+        dd:hover {
+            background-color: #ddd;
+        }
+    }
+}
+.role-info {
+    .nav-bar {
+        margin: 10px;
+        a.switch {float: right;}
+    }
+    .info, div.tag, .edit-role-form {
+        .box-bg;
+    }
+
+}
+
+ul.role-list {
+    list-style-type: none;
+    margin-left: 0;
+    
+}
+
+a.del {
+    color: red;
+}
+div.tag {
+
+    clear: both;
+    ul {
+        margin-left: 0;
+        list-style-type: none;
+        li {
+            margin-left: 0;
+            float: left;
+            a, span {
+                display: block;
+                margin: 5px;
+                padding: 2px 6px;
+                background-color: #595C59;
+                border-radius: 4px;
+                color: #EADDDD;
+                font-size: 10pt;
+            }
+        }
+    }
+    ul:after {
+        .clear-fix-after;
+    }
+    .add-tag-form {
+        input[type="text"] {width: 6em;}
+    }
+}
+
+div.scene-list {
+    ul {
+        list-style-type: none;
+    }
+    li {
+        background-color: #E3E6F8;
+        border: 1px solid #0C14A0;
+        margin: 10px;
+        h3 {
+            margin: 5px;
+            font-weight: bold;
+            color: #283788;
+        }
+        .description {
+            color: #6A6A6F;
+            margin: 5px;
+            font-size: 10pt;
+        }
+        a {
+            font-size: 10pt;
+        }
+        a.goto {
+            float: right;
+        }
+    }
+}
+
+.help {
+    p {
+        text-indent: 2em;
+        line-height: 1.5em;
+        a {
+            text-decoration: underline;
+        }
+    }
+    img {
+        display: block;
+        margin: auto;
+    }
+}
+
+.credit {
+    dl {
+        line-height: 1.5em;
+        dt {
+            font-weight: bold;
+            line-height: 2em;
+        }
+    }
+}
+
+.admin {
+    h2 {
+        font-weight: bold;
+        font-size: 20pt;
+        margin-top: 10px;
+    }
+    li {
+        border: 1px solid #999;
+        margin: 5px;
+    }
+    table {
+        margin: 10px;
+        td, th {
+            border: 1px solid #333;
+            padding: 5px;
+        }
+    }
+}
+
+@mobile-page-width: 100%;
+@media screen and (min-width: 319px) and (max-width: 959px) { // small screen
+    a {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    img {
+        max-width: 100%;
+    }
+    .header {
+        .control {
+            margin: 1em;
+            clear: both;
+        }
+    }
+    .header:after {
+        .clear-fix-after;
+    }
+    .footer ul li {
+        margin: 10px;
+    }
+    .index {
+        width: @mobile-page-width;
+        .choose, .post-form {
+            width: 100%;
+        }
+        ul.twit {
+            width: 100%;
+            li.twit .origin {
+                margin: 0;
+            }
+        }
+    }
+    .role {
+        width: @mobile-page-width;
+    }
+    .help p {
+        width: 100%;
+    }
+}
+
+@page-width: 800px;
+.in-wrap {
+    width: @page-width;
+    margin: auto;
+}
+@media screen and (min-width: 960px) {
+    .header {
+        h1 {
+            float: left;
+        }
+        .control {
+            float: right;
+        }
+    }
+    .header:after {
+        .clear-fix-after;
+    }
+    .footer ul li {
+        float: left;
+    }
+    li.twit, div.twit {
+        .image img {
+            max-width: 580px;
+        }
+        div.retweet .retweet-form textarea {
+            width: 513px;
+        }
+    }
+    .index {
+        .in-wrap;
+    }
+    .role {
+        .in-wrap;
+        dd {
+            .info { float: left; }
+            .control { float: right; }
+        }
+        dd:after { .clear-fix-after; }
+    }
+    .role-info {
+        width: @twit-content-width;
+        margin: auto;
+        .info .recent {
+            float: right;
+        }
+    }
+    div.twit {
+        width: @page-width;
+        margin: auto;
+    }
+    div.scene-list {
+        margin: auto;
+        width: 890px;
+        li {
+            float: left;
+            width: 200px;
+        }
+    }
+    .help p {
+        width: 600px;
+        margin: auto;
+    }
+}
+
+.high {
+    padding: 5px;
+    border: 1px solid #CAC5C5;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+ul.twit {
+    list-style-type: none;
+}
+
+.name-wrap {
+    img {
+        width: 16px;
+        vertical-align: sub;
+    }
+}
+
+.scene-form {
+    width: 500px;
+    margin: auto;
+}
+
+.role-info .avatar-side {
+    width: 82px;
+}
+
+#fileInput, #avatar_upload {
+    visibility: hidden;
+}

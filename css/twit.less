@@ -1,0 +1,88 @@
+
+/*微博条目*/
+li.twit, div.twit {
+
+    .right-col {
+        background: #fff;
+        border-bottom: 1px solid #97BEDD;
+        box-shadow: 0px 1px 3px #849AA7;
+        margin-bottom: 20px;
+
+        .name-bar {
+            padding: 6px;
+            padding-top: 8px;
+            border-bottom: 1px solid #C7C1C1;
+            background-color: #F6F4F4;
+        }
+
+        .content {
+            padding: 10px;
+
+            .text {
+                line-height: 170%;
+            }
+        }
+    }
+
+    div.image{
+        clear: both;
+        padding: 10px 0;
+        img {
+            display: block;
+            margin: auto;
+        }
+    }
+    .origin {
+    }
+    .control {
+        text-align: right;
+        padding-right: 30px;
+        clear: both;
+
+        .retweet-btn-wrap {
+            .btn {
+                padding-right: 0;
+            }
+
+            padding-right: 12px;
+        }
+    }
+    a.edit {
+        float: right;
+    }
+    div.comment {
+        background-color: #F1F1F1;
+        padding: 10px;
+        border-top: 1px solid #C9C7C7;
+
+        form {
+            margin-bottom: 0;
+        }
+        .comment-form {
+            margin-top: 10px;
+        }
+        .comment-form.shrink {
+            img {
+                display: none;
+            }
+            textarea {
+                height: 1.5em;
+            }
+            .btn {
+                display: none;
+            }
+        }
+    }
+    div.retweet {
+        form {
+            margin-bottom: 0;
+        }
+    }
+    .pop-panel span {
+        display: inline-block;
+        padding: 10px;
+    }
+}
+li.twit:hover .del {
+    display: inline;
+}

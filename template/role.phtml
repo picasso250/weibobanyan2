@@ -1,0 +1,62 @@
+<?php
+!defined('IN_KC') && exit('Access Denied');
+/**
+ * @file    role
+ * @author  ryan <cumt.xiaochi@gmail.com>
+ * @created Jul 17, 2012 10:06:36 AM
+ */
+
+$page['scripts'][] = js_node('jquery.form');
+$page['scripts'][] = js_node('widget');
+$page['scripts'][] = js_node('page/index');
+$page['scripts'][] = js_node('vendor/jquery.ui.widget');
+$page['scripts'][] = js_node('jquery.iframe-transport');
+$page['scripts'][] = js_node('jquery.fileupload');
+$page['scripts'][] = js_node('page/role_edit');
+?>
+<div class="role-info" data-id="<?php echo $info['id'] ?>">
+    <div class="nav-bar">
+        <a href="<?php echo ROOT; ?>role">&lt;返回角色列表</a>
+        <a class="switch" href="<?php echo ROOT.'role/'.$info['id']; ?>?method=play">以此身份登录(扮演这个角色)</a>
+    </div>
+    <div class="info">
+      <div class="row-fluid">
+        <div class="span2 avatar-side">
+          <img class="img-polaroid" src="<?php echo $info['avatar']?:$config['default_avatar']; ?>" />
+        </div>
+        <div class="span10">
+          <div class="recent">最近30天发博<?php echo $recent_twit_num; ?>篇</div>
+          <?php include _tpl('role_name') ?>
+          <div>
+            <label for="is_v"><input type="checkbox" id="is_v" name="is_v" <?php echo $info['is_v']? 'checked':''; ?> /> 加V认证</label>
+          </div>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <label for="avatar_upload" class="btn">更换头像</label>
+        <input id="avatar_upload" type="file" name="avatar" data-url="/role_avatar_upload">
+      </div>
+    </div>
+    <div class="tag">
+        <ul>
+            <?php foreach ($role_tags as $tag) { ?>
+            <li><span><?php echo $tag; ?></span></li>
+            <?php } ?>
+        </ul>
+        <form action="<?php echo $base_url.$info['id']; ?>" method="post" class="form-inline">
+            <input type="hidden" name="method" value="add_tag" />
+            <div class="add-tag-form">
+                <input type="text" name="text" />
+                <input type="submit" value="添加标签" class="btn" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <ul class="twit">
+            <?php foreach ($twits as $t) { ?>
+            <?php include _block('twit'); ?>
+            <?php } ?>
+        </ul>
+    </div>
+</div>

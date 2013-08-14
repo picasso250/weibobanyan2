@@ -1,0 +1,17 @@
+name: weibobanyan
+version: 1
+handle:
+- rewrite: if(!is_file()) goto "/index.php?%{QUERY_STRING}"
+- mime: if( path ~ "\.less$") type "text/css"
+- compress: if ( out_header["Content-type"]=="text/css" ) compress
+- compress: if ( out_header["Content-type"]=="text/plain" ) compress
+- compress: if ( out_header["Content-type"]=="text/javascript" ) compress
+- compress: if ( out_header["Content-type"]=="application/javascript" ) compress
+- compress: if ( out_header["Content-type"]=="text/html" ) compress
+- expire: if(path ~ "\.js$") time 2629000
+- expire: if(path ~ "\.css$") time 2629000
+- expire: if(path ~ "\.less$") time 2629000
+- expire: if(path ~ "\.jpg$") time 2629000
+- expire: if(path ~ "\.png$") time 2629000
+- expire: if(path ~ "\.gif$") time 2629000
+- expire: if(path ~ "\.ico$") time 2629000
