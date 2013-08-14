@@ -14,8 +14,7 @@ class Role extends Model {
     static $table = 'role';
 
     public function getInfo($whose_view=0) {
-        $conds = array("id=?"=>$this->id);
-        $r = Pdb::fetchRow('*', self::$table, $conds);
+        $r = self::orm()->find_one($this->id)->as_array();
         if ($whose_view) {
             $user_id = $whose_view;
             $r['watch'] = $this->watchBy($user_id);
@@ -25,10 +24,10 @@ class Role extends Model {
 
     public static function hasName($name)
     {
-        $conds = array('name=?' => $name);
-        $r = Pdb::fetchRow('*', self::$table, $conds);
+        $r = self::orm()->where('name', $name)->find_one();
+
         if ($r) {
-            return new self($r);
+            return new self($r->as_array());
         } else {
             return false;
         }
@@ -42,13 +41,11 @@ class Role extends Model {
         ));
     }
 
-    public static function add ($name, $avatar='') {
-        if ($name) {
-            Pdb::insert(compact('name', 'avatar'), 'role'); // time???
-            return new self(Pdb::lastInsertId());
-        } else {
-            throw new Exception('name is empty');
-        }
+    public static function add($args) {
+        $r = self::orm()->create();
+        $r->set($args);
+        $r->save();
+        return new self($r->id);
     }
 
     public function edit ($arr) {
@@ -208,4 +205,3 @@ class Role extends Model {
     }
 }
 
-?>

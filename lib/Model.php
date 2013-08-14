@@ -33,7 +33,7 @@ class Model {
         return ltrim(strtolower(preg_replace('/([A-Z])/', '_$1', $str)), '_');
     }
 
-    public function under_score_to_camel_case($str)
+    public static function under_score_to_camel_case($str)
     {
         return ucfirst(preg_replace_callback('/_[a-z]/', function($s){return strtoupper(trim($s, '_'));}, $str));
     }

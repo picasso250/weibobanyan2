@@ -251,4 +251,3 @@ class Twit extends CoreModel {
     }
 }
 
-?>

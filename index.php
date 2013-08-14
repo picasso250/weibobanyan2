@@ -58,3 +58,5 @@ if (isset($force_redirect)) { // 强制跳转 这个在整站关闭的时候也�
 }
 $template = _tpl(_last_controller());
 include _tpl('master');
+
+var_dump(get_included_files());
