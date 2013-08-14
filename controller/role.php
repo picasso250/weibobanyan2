@@ -31,7 +31,7 @@ switch (get_set($_REQUEST['method'])) {
                 redirect($rooturl.'role/'.$role->id);
             }
             try { // 这里有 try，但别处没有try，这里是严谨而无趣的地方。。。
-                $role = Role::add($name);
+                $role = Role::add(array('name' => $name));
                 $role->addToHistory();
                 redirect($rooturl . 'role/' . $role->id);
             } catch (Exception $exc) {
